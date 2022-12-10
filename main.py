@@ -28,6 +28,7 @@ while game_on:
         #detect collision with food
         if snakes.all_segments[0].distance(food) <= 15:
                 score.update_score()
+                score.update_highscore()
                 food.refresh()
                 snakes.extend()
 
@@ -38,6 +39,7 @@ while game_on:
         if x>290 or x<-290 or y>290 or y<-290 :
                 game_on = False
                 score.game_over()
+
 
         #detect collision with its tail
         for segment in snakes.all_segments[1:]:
